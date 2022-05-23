@@ -1,0 +1,5 @@
+#!C:\Users\hmy98\Desktop\equivalence_reperform\venv\Scripts\python.exe
+
+from converter.menu import print_menu
+
+print_menu()
