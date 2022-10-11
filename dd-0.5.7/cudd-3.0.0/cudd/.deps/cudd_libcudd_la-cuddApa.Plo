@@ -1,0 +1,112 @@
+cudd/cudd_libcudd_la-cuddApa.lo: cudd/cuddApa.c \
+ /usr/include/stdc-predef.h util/util.h config.h /usr/include/assert.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h \
+ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
+ /usr/include/bits/confname.h /usr/include/stdio.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/ctype.h /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/stdlib.h /usr/include/bits/stdlib-float.h \
+ /usr/include/string.h /usr/include/inttypes.h \
+ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h cudd/cuddInt.h \
+ /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h st/st.h \
+ mtr/mtr.h epd/epd.h cudd/cudd.h
+
+/usr/include/stdc-predef.h:
+
+util/util.h:
+
+config.h:
+
+/usr/include/assert.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/ctype.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/string.h:
+
+/usr/include/inttypes.h:
+
+/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+cudd/cuddInt.h:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+st/st.h:
+
+mtr/mtr.h:
+
+epd/epd.h:
+
+cudd/cudd.h:
