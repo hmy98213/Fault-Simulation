@@ -632,6 +632,8 @@ def auto_run(path, file_name, output):
 if __name__ == '__main__':
     path = 'Benchmarks/BV/'
     file_test(path, "bv_n2.qasm", "TN_qaoa_result.txt")
+
+    
     # folder_test(path, "TN_result_qaoa.txt")
 
 
