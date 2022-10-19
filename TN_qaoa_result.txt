@@ -141,3 +141,13 @@ qaoa_100.qasm	100	2720	42	8	0.1107475757598877	tensor(0.9973, dtype=torch.float6
 qaoa_100.qasm	100	2720	42	10	0.11351847648620605	tensor(0.9967, dtype=torch.float64)	
 qaoa_100.qasm	100	2720	42	12	0.1152801513671875	tensor(0.9960, dtype=torch.float64)	
 qaoa_100.qasm	100	2720	42	14	0.12028861045837402	tensor(0.9953, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	0	107.85405945777893	tensor(8.8818e-16, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	2	0.10635638236999512	tensor(0.9912, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	4	0.10397744178771973	tensor(0.9825, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	6	0.10684871673583984	tensor(0.9738, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	8	0.1110846996307373	tensor(0.9652, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	10	0.11458539962768555	tensor(0.9598, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	12	0.1176903247833252	tensor(0.9510, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	14	0.1217203140258789	tensor(0.9427, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	0	141.52047085762024	tensor(8.8818e-16, dtype=torch.float64)	
+qaoa_100.qasm	100	2720	42	2	

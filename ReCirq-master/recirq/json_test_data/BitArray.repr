@@ -1,1 +1,0 @@
-cirq.BitArray(np.random.RandomState(52).choice([0, 1], size=(123, 45)))

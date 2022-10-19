@@ -13,12 +13,20 @@ from contextlib import contextmanager
 from qiskit.transpiler.passes import RemoveBarriers
 class TimeoutException(Exception): pass
 
+def Rz(theta):
+    mat = np.zeros((2, 2), dtype=complex)
+    mat[0][0] = np.exp(-1.0j * theta /2)
+    mat[1][1] = np.exp(1.0j * theta /2)
+    return np.array(mat)
+
 noise_gate = np.zeros((2, 2, 2, 2), dtype=complex)
 noise_gate[0][0][0][0] = 1
 noise_gate[0][1][0][1] = noise_gate[1][0][1][0] = 0.98224288
 noise_gate[1][1][1][1] = 0.99750312
 noise_gate[1][0][0][1] = 0.00249688
 noise_gate = np.array(noise_gate)
+
+fault_rz = Rz(0.06)
 
 @contextmanager
 def time_limit(seconds):
@@ -70,38 +78,15 @@ def apply_gate(qubit_edges, gate, operating_qubits):
         qubit_edges[bit] = op[i + len(operating_qubits)]
 
 
-def error_gate2(type):
-    # choice = randrange(4)
-    # depolarizing
-    if type == noise:
-        
-    choice = 0
-    if choice == 0:
-        G = np.zeros((2, 2, 2, 2), dtype=complex)
-        G[0][0][0][0] = G[1][1][1][1] = 1 - 2 * p / 3
-        G[0][1][0][1] = G[1][0][1][0] = 1 - 4 * p / 3
-        G[0][0][1][1] = G[1][1][0][0] = 2 * p / 3
-        G = np.array(G)
-    # bit flip
-    elif choice == 1:
-        G = np.zeros((2, 2, 2, 2), dtype=complex)
-        G[0][0][0][0] = G[0][1][0][1] = G[1][0][1][0] = G[1][1][1][1] = 1 - p
-        G[0][0][1][1] = G[0][1][1][0] = G[1][0][0][1] = G[1][1][0][0] = p
-        G = np.array(G)
-    # phase flip
-    elif choice == 2:
-        G = np.zeros((2, 2, 2, 2), dtype=complex)
-        G[0][0][0][0] =  G[1][1][1][1] = 1
-        G[0][1][0][1] = G[1][0][1][0] = 1 - 2 * p
-        G = np.array(G)
-    # bit-phase flip
-    elif choice == 3:
-        G = np.zeros((2, 2, 2, 2), dtype=complex)
-        G[0][0][0][0] = G[0][1][0][1] = G[1][0][1][0] = G[1][1][1][1] = 1 - p
-        G[0][0][1][1] = G[1][1][0][0] = -p
-        G[0][1][1][0] = G[1][0][0][1] = p
-        G = np.array(G)
-    return G
+def apply_error2(qubits0, qubits1, errors, type):
+    if type == 'noise':
+        qubits = qubits0 + qubits1
+        apply_gate(qubits, noise_gate, errors)
+        qubits0[:] = qubits[:len(qubits0)]
+        qubits1[:] = qubits[len(qubits0):]
+    else:
+        apply_gate(qubits0, fault_rz, errors[0])
+        apply_gate(qubits1, fault_rz, errors[1])
 
 
 # Apply an error circuit with double qubit, error_num=0 applies a non-error circuit, apply_inv 
@@ -120,10 +105,7 @@ def error_cir_apply2(cir, qubits0, qubits1, error_num=0, error_pos=[], apply_inv
         if(cnt < error_num and pos == error_pos[cnt]):
             error_qubit = random.sample(operating_qubits, 1)[0]
             errors = [error_qubit, error_qubit + len(qubits0)]
-            qubits = qubits0 + qubits1
-            apply_gate(qubits, error_gate2(0.001), errors)
-            qubits0[:] = qubits[:len(qubits0)]
-            qubits1[:] = qubits[len(qubits0):]
+            apply_error2(qubits0, qubits1, errors, type = 'unitary')
             cnt = cnt + 1        
             if(cnt == error_num and apply_inv):
                 cir_inv = cir.inverse()
@@ -254,10 +236,11 @@ def noise_number_test(path, file_name, output_file):
 
 if __name__ == '__main__':
     error_num = 2
-    tn.set_default_backend("pytorch")
-    noise_number_test("Benchmarks/QAOA2/", "qaoa_100.qasm", "TN_qaoa_result.txt")
-    noise_number_test("Benchmarks/inst_TN/", "inst_6x6_20_0.qasm", "TN_inst_result.txt")
+    # tn.set_default_backend("pytorch")
+    # noise_number_test("Benchmarks/QAOA2/", "qaoa_100.qasm", "TN_qaoa_result.txt")
+    # noise_number_test("Benchmarks/inst_TN/", "inst_6x6_20_0.qasm", "TN_inst_result.txt")
     # file_test("Benchmarks/inst_TN/", "inst_6x6_20_0.qasm", "TN_inst_result.txt", error_num)
+    file_test("Benchmarks/BV/", "bv_n10.qasm", "TN_inst_result.txt", error_num)
 
     # folder_test('Benchmarks/QAOA/', "TN_result_qaoa.txt", error_num)
     # folder_test('Benchmarks/HFVQE/', "TN_result_hfvqe.txt", error_num)
