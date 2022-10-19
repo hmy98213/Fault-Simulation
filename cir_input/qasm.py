@@ -18,6 +18,8 @@ def CreateCircuitFromQASM(file, path):
         QASM = QASM + line
     #print(QASM)
     cir = QuantumCircuit.from_qasm_str(QASM)
-    QASM_file.close
+    QASM_file.close()
     # cir = transpile(cir, basis_gates=['h', 'x', 'p', 'cp', 'cswap', 'cx', 'swap'])
+    # cir = transpile(cir, basis_gates=['cx', 'u3'])
+    print(cir.size())
     return cir
