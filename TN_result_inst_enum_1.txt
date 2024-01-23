@@ -1,0 +1,38 @@
+0.1	inst_6x6_10_0	36	264	11	20	12.063812971115112	3.6807622704133734e-06	
+0.1	inst_6x6_20_0	36	483	21	20	maximum supported dimension for an ndarray is 32, found 33
+0.1	inst_4x4_40_0	16	394	41	20	maximum supported dimension for an ndarray is 32, found 34
+0.1	inst_4x5_10_0	20	145	11	20	6.819500684738159	0.0033197561014600375	
+0.1	inst_4x5_60_0	20	726	61	20	maximum supported dimension for an ndarray is 32, found 33
+0.1	inst_4x4_20_0	16	209	21	20	13.617847681045532	0.0030683997597479714	
+0.1	inst_4x5_40_0	20	494	41	20	maximum supported dimension for an ndarray is 32, found 33
+0.1	inst_4x5_80_0	20	959	81	20	maximum supported dimension for an ndarray is 32, found 34
+0.1	inst_4x4_10_0	16	115	11	20	5.7310426235198975	0.0024972680633809008	
+0.1	inst_4x5_70_0	20	843	71	20	maximum supported dimension for an ndarray is 32, found 34
+0.1	inst_4x4_50_0	16	485	51	20	maximum supported dimension for an ndarray is 32, found 34
+0.1	inst_4x4_30_0	16	299	31	20	109.32100367546082	0.0014045240663650674	
+0.1	inst_4x5_30_0	20	378	31	20	maximum supported dimension for an ndarray is 32, found 34
+0.1	inst_4x5_50_0	20	610	51	20	maximum supported dimension for an ndarray is 32, found 33
+0.1	inst_4x4_60_0	16	579	61	20	maximum supported dimension for an ndarray is 32, found 33
+0.1	inst_4x5_20_0	20	261	21	20	27.211475133895874	0.0016337156654282808	
+0.1	inst_4x4_70_0	16	669	71	20	maximum supported dimension for an ndarray is 32, found 34
+0.1	inst_7x7_10_0	49	364	11	20	19.049594402313232	2.556911424177999e-08	
+0.1	inst_4x4_80_0	16	764	81	20	maximum supported dimension for an ndarray is 32, found 33
+0.1	inst_6x6_10_0	36	264	11	20	15.122883558273315	tensor(3.6683e-06, dtype=torch.float64)	
+0.1	inst_6x6_20_0	36	483	21	20	1041.83828663826	tensor(6.2646e-06, dtype=torch.float64)	
+0.1	inst_4x4_40_0	16	394	41	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	inst_4x5_10_0	20	145	11	20	9.887418746948242	tensor(0.0033, dtype=torch.float64)	
+0.1	inst_4x5_60_0	20	726	61	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 4398046511104 bytes. Error code 12 (Cannot allocate memory)
+0.1	inst_4x4_20_0	16	209	21	20	21.78767681121826	tensor(0.0031, dtype=torch.float64)	
+0.1	inst_4x5_40_0	20	494	41	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	inst_4x5_80_0	20	959	81	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	inst_4x4_10_0	16	115	11	20	7.9378252029418945	tensor(0.0025, dtype=torch.float64)	
+0.1	inst_4x5_70_0	20	843	71	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	inst_4x4_50_0	16	485	51	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	inst_4x4_30_0	16	299	31	20	164.75492525100708	tensor(0.0014, dtype=torch.float64)	
+0.1	inst_4x5_30_0	20	378	31	20	1011.4143331050873	tensor(0.0017, dtype=torch.float64)	
+0.1	inst_4x5_50_0	20	610	51	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	inst_4x4_60_0	16	579	61	20	5485.762219905853	tensor(0.0026, dtype=torch.float64)	
+0.1	inst_4x5_20_0	20	261	21	20	20.941499710083008	tensor(0.0016, dtype=torch.float64)	
+0.1	inst_4x4_70_0	16	669	71	20	435.76857829093933	tensor(0.0031, dtype=torch.float64)	
+0.1	inst_7x7_10_0	49	364	11	20	20.76537275314331	tensor(2.5531e-08, dtype=torch.float64)	
+0.1	inst_4x4_80_0	16	764	81	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)

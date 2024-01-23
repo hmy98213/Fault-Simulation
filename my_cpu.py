@@ -10,27 +10,22 @@ import numpy as np
 import tensornetwork as tn
 import signal
 from contextlib import contextmanager
-from qiskit import QuantumCircuit
+from qiskit import QuantumCircuit, Aer
 from qiskit import transpile
 from qiskit.transpiler.passes import RemoveBarriers
+from qiskit.quantum_info import Statevector
 from angle_gen import faulty_gate_2
 class TimeoutException(Exception): pass
 from error_gen import *
-
+from tn_construction import *
+from verification_by_qiskit import *
+import socket
 # noise_gate = np.zeros((2, 2, 2, 2), dtype=complex)
 # noise_gate[0][0][0][0] = 1
 # noise_gate[0][1][0][1] = noise_gate[1][0][1][0] = 0.98224288
 # noise_gate[1][1][1][1] = 0.99750312
 # noise_gate[1][0][0][1] = 0.00249688
 # noise_gate = np.array(noise_gate)
-
-noise_gate = gen_noise_gate(200, 30, 0.5)
-# noise_gate = np.reshape(noise_gate, (2, 2, 2, 2))
-
-theta = 0.1
-t1 = 200
-t2 = 30
-fault_crz = cRz(theta)
 
 @contextmanager
 def time_limit(seconds):
@@ -43,192 +38,25 @@ def time_limit(seconds):
     finally:
         signal.alarm(0)
 
-#calculate fidelity with only one input: \ket{00...0}
-def cal_fidelity_in(cir, ps1, error_num, error_pos):
-    all_nodes = []
-    with tn.NodeCollection(all_nodes):
-        right_vec0 = arr_to_tnvec(ps1)
-        right_vec1 = arr_to_tnvec(ps1)
-        left_vec0 = arr_to_tnvec(ps1)
-        left_vec1 = arr_to_tnvec(ps1)
-        start_gates0 = [
-            tn.Node(np.eye(2, dtype=complex)) for _ in range(cir.num_qubits)
-        ]
-        start_gates1 = [
-            tn.Node(np.eye(2, dtype=complex)) for _ in range(cir.num_qubits)
-        ]
-        qubits0 = [node[1] for node in start_gates0]
-        qubits1 = [node[1] for node in start_gates1]
-        start_wires0 = [node[0] for node in start_gates0]
-        start_wires1 = [node[0] for node in start_gates1]
-        error_cir_apply2(cir, qubits0, qubits1, error_num, error_pos, all_crz_fault=True, apply_inv=True)
-        # error_cir_apply2(cir.inverse(), qubits0, qubits1)
-
-        for i in range(cir.num_qubits):
-            tn.connect(start_wires0[i], left_vec0[i][0])
-            tn.connect(qubits0[i], right_vec0[i][0])
-            tn.connect(start_wires1[i], left_vec1[i][0])
-            tn.connect(qubits1[i], right_vec1[i][0])
-        time_now = datetime.datetime.now()
-        print(time_now.strftime('%m.%d-%H:%M:%S'))
-
-    return tn.contractors.auto(all_nodes).tensor
-
-def cal_fidelity_io(cir, ps1, ps2, error_num, error_pos):
-    all_nodes = []
-    with tn.NodeCollection(all_nodes):
-        right_vec0 = arr_to_tnvec(ps2)
-        right_vec1 = arr_to_tnvec(ps2)
-        left_vec0 = arr_to_tnvec(ps1)
-        left_vec1 = arr_to_tnvec(ps1)
-        start_gates0 = [
-            tn.Node(np.eye(2, dtype=complex)) for _ in range(cir.num_qubits)
-        ]
-        start_gates1 = [
-            tn.Node(np.eye(2, dtype=complex)) for _ in range(cir.num_qubits)
-        ]
-        qubits0 = [node[1] for node in start_gates0]
-        qubits1 = [node[1] for node in start_gates1]
-        start_wires0 = [node[0] for node in start_gates0]
-        start_wires1 = [node[0] for node in start_gates1]
-        error_cir_apply2(cir, qubits0, qubits1, error_num, error_pos, all_crz_fault=True, apply_inv=False)
-        # error_cir_apply2(cir.inverse(), qubits0, qubits1)
-
-        for i in range(cir.num_qubits):
-            tn.connect(start_wires0[i], left_vec0[i][0])
-            tn.connect(qubits0[i], right_vec0[i][0])
-            tn.connect(start_wires1[i], left_vec1[i][0])
-            tn.connect(qubits1[i], right_vec1[i][0])
-
-    return tn.contractors.auto(all_nodes).tensor
-
-def file_test(path, file_name, output, error_num = 0):
-    f = open(output, 'a')
-    f.write("\n")
-    time_now = datetime.datetime.now()
-    print(time_now.strftime('%m.%d-%H:%M:%S'))
-
-    cir = file_to_cir(file_name, path)
-    nqubits = cir.num_qubits
-    gate_num = cir.size()
-    dep = cir.depth()
-
-    error_pos = generate_error(gate_num, error_num ,random_pos=True)
-    error_pos.sort()
-    print(error_pos)
-    # error_pos = [0, 1]
-
-    ps1 = [np.array([1.0, 0], dtype=complex) for i in range(nqubits)]
-    ps2 = [np.array([1.0, 0], dtype=complex) for i in range(nqubits)]
-
-    # file_name = file_name.replace('.qasm', '')
-    f.write(str(theta) + "\t")
-    print('circuit:', file_name)
-    f.write(file_name+"\t")
-
-    print('qubits:', nqubits)
-    f.write(str(nqubits)+"\t")
-
-    print('gates number:', gate_num)
-    f.write(str(gate_num)+"\t")
-
-    print('depth:', dep)
-    f.write(str(dep)+"\t")
-
-    print('noisy_num:', error_num)
-    f.write(str(error_num)+"\t")
-
-    try:
-        t_start = time.time()
-        result = np.real(cal_fidelity_in(cir, ps1, error_num, error_pos))
-        result = np.sqrt(result)
-        run_time = time.time() - t_start
-        print("alg2 run time: ", run_time)
-        f.write(str(run_time)+"\t")
-        print(np.sqrt(result))
-        f.write(str(result)+"\t")
-    except TimeoutException as e:
-        f.write(str(e)+"\n")
-    except Exception as e:
-        raise
-        f.write(str(e)+"\n")
-    f.close()
-
-def file_basis_test(path, file_name, output, error_num = 0):
-    f = open(output, 'a')
-    f.write("\n")
-    time_now = datetime.datetime.now()
-    print(time_now.strftime('%m.%d-%H:%M:%S'))
-
-    cir = file_to_cir(file_name, path)
-    nqubits = cir.num_qubits
-    gate_num = cir.size()
-
-    error_pos = generate_error(gate_num, error_num ,random_pos=True)
-    error_pos.sort()
-    print(error_pos)
-    # error_pos = [0, 1]
-
-    ps1 = []
-
-    for j in range(2**nqubits):
-        f.write(str(j)+"\t")
-        tmp_in = j
-        ps1 = []
-        for _ in range(nqubits):
-            if tmp_in%2 == 0:
-                ps1.insert(0, np.array([1.0, 0], dtype=complex))
-            else:
-                ps1.insert(0, np.array([0, 1.0], dtype=complex))
-            tmp_in = tmp_in//2
-
-        for i in range(2**nqubits):
-            tmp = i
-            ps2 = []
-            for _ in range(nqubits):
-                if tmp%2 == 0:
-                    ps2.insert(0, np.array([1.0, 0], dtype=complex))
-                else:
-                    ps2.insert(0, np.array([0, 1.0], dtype=complex))
-                tmp = tmp//2
-            try:
-                result = np.real(cal_fidelity_io(cir, ps1, ps2, error_num, error_pos))
-                # np.set_printoptions(suppress=True, precision=8)
-                # result = np.sqrt(result)
-                # print("alg2 run time: ", run_time)
-                # f.write(str(run_time)+"\t")
-                # print("base state:", i)
-                # f.write(str(run_time)+"\t")
-                # print(result)
-                f.write("%.4f\t"%result)
-            except TimeoutException as e:
-                f.write(str(e)+"\n")
-            except Exception as e:
-                raise
-                f.write(str(e)+"\n")
-        f.write("\n")
-    f.close()
-
-
 def folder_test(path, output_file, error_num = 0):
     files = os.listdir(path)
     for f in files:
         try:
-            file_test(path, f, output_file, error_num)
-        except:
-            pass
-        gc.collect()
-
-
-def noise_number_test(path, file_name, output_file):
-    for noise_number in range(0, 26, 2):
-        try:
-            file_test(path, file_name, output_file, noise_number)
+            cir_tn = QCTN(f, path)
+            cir_tn.io_test(output_file, error_num, random_pos=True)
         except:
             raise
-            pass
         gc.collect()
 
+def folder_enum_test(path, output_file, error_num = 0, enum = 1):
+    files = os.listdir(path)
+    for f in files:
+        try:
+            cir_tn = QCTN(f, path)
+            cir_tn.enumurate_io(output_file, error_num, random_pos=False, enum = enum)
+        except:
+            pass
+        gc.collect()
 
 def angle_test(path, filename, output_file):
     global theta, fault_crz
@@ -266,7 +94,8 @@ def angle_test(path, filename, output_file):
             return sg2 * (varphi2 - varphi)
         elif(index == 3):
             return sg2 * (varphi3 - varphi)
-
+    
+    cir_tn = QCTN(filename, path)
     num_samples = 9
     X = np.linspace(-0.2, 0.2, num_samples)
     Y1 = np.zeros(num_samples)
@@ -280,46 +109,150 @@ def angle_test(path, filename, output_file):
     for Y in [Y1, Y2, Y3]:
         for index, noise in enumerate(X):
             theta = Y[index]
-            fault_crz = cRz(theta)
+            cir_tn.set_angle(theta)
             with open(output_file, 'a') as f:
-                f.write("%f\t%f\t"%(X[index], theta))
-            file_basis_test(path, filename, output_file)
+                time_now = datetime.datetime.now()
+                print(time_now.strftime('%m.%d-%H:%M:%S'))
+                f.write(time_now.strftime('%m.%d-%H:%M:%S')+"\n")
+                f.write("Parameter: %f\t%f\t"%(X[index], theta))
+            # cir_tn.single_cz_test(output_file)
+            cir_tn.basis_test(output_file, all_crz=True)
 
+def noise_number_test(path, file_name, output_file):
+    for noise_number in range(80, 102, 2):
+        try:
+            cir_tn = QCTN(file_name, path)
+            cir_tn.all_nodes = []
+            cir_tn.enumurate_io(output_file, noise_number, enum = 1)
+            # cir_tn.io_test(output_file, noise_number)
+        except:
+            raise
+            pass
+        gc.collect()
+
+def noise_precision_test(path = DEFAULT_NOISE_PRECISION_PATH, filename = DEFAULT_NOISE_PRECISION_FILE, noise_number = 10, output_file = DEFAULT_NOISE_PRECISION_OUTPUT):
+    cir_tn = QCTN(filename, path)
+    cir_tn.fidelity_test(output_file, error_num=noise_number, random_pos=False)
+    cir_tn.enumurate_fidility_test(output_file, noise_number, enum = 1, random_pos=False)
+
+    # for enum in range(5, noise_number+1):
+    #     try:
+    #         cir_tn.all_nodes = []
+    #         cir_tn.enumurate_fidility_test(output_file, noise_number, enum = enum, random_pos=False)
+    #     except:
+    #         raise
+    #         pass
+    #     gc.collect()
+
+def decoherence_precision_test(path = DEFAULT_NOISE_PRECISION_PATH, filename = DEFAULT_NOISE_PRECISION_FILE, noise_number = 20, output_file = DEFAULT_NOISE_PRECISION_OUTPUT):
+    cir_tn = QCTN(filename, path)
+    cir_tn.fidelity_test(output_file, error_num=noise_number, random_pos=False)
+    global T_ONE_TIME, T_TWO_TIME
+    # for t1 in range(200, 510, 10):
+    #     try:
+    #         cir_tn.set_decoherence_time(t1, T_TWO_TIME)
+    #         cir_tn.all_nodes = []
+    #         # cir_tn.enumurate_fidility_test(output_file, noise_number, random_pos=False)
+    #         cir_tn.fidelity_test(output_file, error_num=noise_number, random_pos=False)
+    #     except:
+    #         raise
+    #         pass
+    #     gc.collect()
+    T_ONE_TIME = 200
+    for t2 in range(20, 51):
+        try:
+            cir_tn.set_decoherence_time(T_ONE_TIME, t2)
+            cir_tn.all_nodes = []
+            cir_tn.fidelity_test(output_file, noise_number, random_pos=False)
+        except:
+            raise
+            pass
+        gc.collect()
+
+def angle_value_test(path, filename, output_file):
+    cir_tn = QCTN(filename, path)
+    num_samples = 50
+    X = np.linspace(0, 0.2, num_samples)
+    for theta in X:
+        gc.collect()
+        cir_tn.set_angle(theta)
+        with open(output_file, 'a') as f:
+            # time_now = datetime.datetime.now()
+            # print(time_now.strftime('%m.%d-%H:%M:%S'))
+            # f.write(time_now.strftime('%m.%d-%H:%M:%S')+"\n")
+            f.write("Parameter: %f\t"%theta)
+        cir_tn.all_nodes = []
+        cir_tn.fidelity_test(output_file, all_crz=True)
+
+def decoherence_test(path, filename, output_file):
+    cir_tn = QCTN(filename, path)
+    num_samples = 49
+    T2 = np.linspace(10, 20, num_samples)
+    for t2 in T2:
+        gc.collect()
+        cir_tn.set_decoherence_time(200, t2)
+        with open(output_file, 'a') as f:
+            # time_now = datetime.datetime.now()
+            # print(time_now.strftime('%m.%d-%H:%M:%S'))
+            # f.write(time_now.strftime('%m.%d-%H:%M:%S')+"\n")
+            f.write("%f\t"%t2)
+        cir_tn.all_nodes = []
+        cir_tn.fidelity_test(output_file, error_num=16, random_pos=True)
+
+def function_test(func, cycles, path, filename = '', output_file = '', error_num = 0, enum = 1):
+    for _ in range(cycles):
+        gc.collect()
+        time_now = datetime.datetime.now()
+        print(time_now.strftime('%m.%d-%H:%M:%S'))
+        with open(output_file, 'a') as f:
+            f.write(time_now.strftime('%m.%d-%H:%M:%S')+"\n")
+            f.write("%s\t%s\t%s\n"%(str(func), filename, output_file))
+        if func == folder_enum_test:
+            func(path, output_file, error_num, enum)
+        if func == folder_test:
+            func(path, output_file, error_num)
+        if func == noise_number_test:
+            func(path, filename, output_file)
+
+class Experiment_Tests:
+    server_name = socket.gethostname()
+    def get_qaoa_folder_test(path = 'Benchmarks/QAOA2/', output_file = "TN_result_qaoa_folder_test_%s.txt"%server_name, error_num = 20):
+        function_test(folder_test, 5, path, output_file=output_file, error_num = error_num)
+    def get_qaoa_folder_enum_test(path = 'Benchmarks/QAOA2/', output_file = "TN_result_qaoa_folder_enum_test_%s.txt"%server_name, error_num = 20):
+        function_test(folder_enum_test, 5, path, output_file=output_file, error_num = error_num)
+    def get_vqe_folder_test(path = 'Benchmarks/HFVQE/', output_file = "TN_result_vqe_folder_test_%s.txt"%server_name, error_num = 20):
+        function_test(folder_test, 5, path, output_file=output_file, error_num = error_num)
+    def get_vqe_folder_enum_test(path = 'Benchmarks/HFVQE/', output_file = "TN_result_vqe_folder_enum_test_%s.txt"%server_name, error_num = 20):
+        function_test(folder_enum_test, 5, path, output_file=output_file, error_num = error_num)
+    def get_qaoa_noise_number_test(path = 'Benchmarks/QAOA2/', file = 'qaoa_100.qasm', output_file = "TN_result_qaoa_noise_number_test_%s.txt"%server_name):
+        function_test(noise_number_test, 5, path, file, output_file=output_file) 
+    
 
 if __name__ == '__main__':
-    error_num = 0
+    # error_num = 2
+    server_name = socket.gethostname()
+    # error_pos = [i for i in range(error_num)]
     tn.set_default_backend("pytorch")
-    # print(gen_noise_gate(200, 30, 0.5))
-    # x = np.linspace(0, 0.1, 50)
-    # for theta in x:
-    #     fault_crz = cRz(theta)
-    #     # file_test("Benchmarks/inst_TN/", "inst_6x6_10_0.qasm", "TN_inst_result.txt", error_num)
-    #     file_test("Benchmarks/QAOA2/", "qaoa_64.qasm", "TN_qaoa_result.txt", error_num)
 
-    # print(gen_noise_gate(200, 30, 0.5))
-    # x = np.linspace(25, 35, 50)
-    # for t in x:
-    #     t2 = t
-    #     noise_gate = gen_noise_gate(200, t2, 0.5)
-    #     file_test("Benchmarks/inst_TN/", "inst_6x6_20_0.qasm", "TN_inst_result.txt", error_num)
-    #     file_test("Benchmarks/QAOA2/", "qaoa_100.qasm", "TN_qaoa_result.txt", error_num)
-
-
-    # file_test("Benchmarks/QAOA2/", "qaoa_100.qasm", "TN_qaoa_result.txt", error_num)
-
-    # noise_number_test("Benchmarks/QAOA2/", "qaoa_81.qasm", "TN_qaoa_result.txt")
-    # noise_number_test("Benchmarks/inst_TN/", "inst_6x6_20_0.qasm", "TN_inst_result.txt")
-    # file_test("Benchmarks/inst_TN/", "inst_6x6_40_0.qasm", "TN_inst_result.txt", error_num)
+    folder_enum_test('Benchmarks/tmp/', 'TN_result_tmp_folder_enum_test_%s.txt'%server_name, error_num = NOISE_NUM, enum = 1)
+    # set_fix_error(error_num)
+    # function_test(folder_enum_test, 5, 'Benchmarks/QAOA/', output_file="TN_result_qaoa_%s.txt"%server_name, error_num = error_num)
+    # function_test(folder_test, 5, 'Benchmarks/QAOA2/', output_file="TN_result_qaoa_folder_test_%s.txt"%server_name, error_num = error_num)
+    # function_test(folder_test, 1, 'Benchmarks/Test/', output_file="TN_result_qaoa_%s.txt"%server_name, error_num = error_num)
+    # function_test(folder_enum_test, 1, 'Benchmarks/QAOA2/', output_file="TN_result_qaoa_%s.txt"%server_name, error_num = error_num)
+    # qiskit_simulate('Benchmarks/Test/', 'qmy.qasm', output_file="TN_result_qaoa_%s.txt"%server_name, error_num = error_num, error_position=[2, 3])
     
+    # function_test(noise_number_test, 1, 'Benchmarks/QAOA2/', 'qaoa_100.qasm',output_file="TN_result_qaoa_%s.txt"%server_name, error_num = error_num)
+    # function_test(folder_enum_test, 5, 'Benchmarks/inst_TN/', output_file="TN_result_inst_%s.txt"%server_name, error_num = error_num)
+    # function_test(folder_test, 5, 'Benchmarks/inst_TN/', output_file="TN_result_inst_%s.txt"%server_name, error_num = error_num)
+    # function_test(noise_number_test, 5, 'Benchmarks/inst_TN/', 'inst_6x6_20.qasm', output_file="TN_result_inst_%s.txt"%server_name, error_num = error_num)
+
+    # noise_precision_test()
+    # decoherence_precision_test()
+    # Experiment_Tests.get_qaoa_noise_number_test()
+    # Experiment_Tests.get_qaoa_folder_test()
+    # Experiment_Tests.get_qaoa_folder_enum_test()
+    # Experiment_Tests.get_vqe_folder_test()
+    # Experiment_Tests.get_vqe_folder_enum_test()
+
     
-    # file_basis_test("Benchmarks/Simple/", "4-qubit-full-adder.qasm", "result.txt", error_num)
-
-    # folder_test('Benchmarks/QAOA/', "TN_result_qaoa.txt", error_num)
-    # folder_test('Benchmarks/HFVQE/', "TN_result_hfvqe.txt", error_num)
-    # folder_test('Benchmarks/inst_TN/', "TN_result_inst.txt", error_num)
-
-    angle_test("Benchmarks/Simple/", "4qbit-random-circ.qasm", "angle_result_rand.txt")
-    angle_test("Benchmarks/Simple/", "4-qubit-full-adder.qasm", "angle_result_adder.txt")
-
-
-

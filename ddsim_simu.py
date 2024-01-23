@@ -72,5 +72,5 @@ def folder_test(path, output_file, error_num = 0):
             raise
 
 if __name__ == "__main__":
-    # file_test('Benchmarks/inst_TN/', "inst_4x5_20_0.qasm", "DDSIM_result.txt")
-    folder_test('Benchmarks/QAOA2/', "DDSIM_result.txt")
+    file_test('Benchmarks/inst_TN/', "inst_4x5_10_0.qasm", "DDSIM_result.txt")
+    # folder_test('Benchmarks/QAOA2/', "DDSIM_result.txt")

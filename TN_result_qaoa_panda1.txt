@@ -1,0 +1,517 @@
+0.1	qaoa_169	169	4706	42	20	35.53688645362854	tensor(3.6317e-26, dtype=torch.float64)	
+0.1	qaoa_121	121	3322	42	20	7.423057317733765	tensor(6.0919e-19, dtype=torch.float64)	
+0.1	qaoa_225	225	6330	42	20	55.23648953437805	tensor(1.3531e-34, dtype=torch.float64)	
+0.1	qaoa_144	144	3984	42	20	8.956035852432251	tensor(2.1029e-22, dtype=torch.float64)	
+0.1	qaoa_196	196	5488	42	20	23.69283413887024	tensor(3.1342e-30, dtype=torch.float64)	
+0.1	qaoa_169	169	4706	42	20	18.271939039230347	tensor(3.6315e-26, dtype=torch.float64)	
+0.1	qaoa_121	121	3322	42	20	6.5970001220703125	tensor(6.0923e-19, dtype=torch.float64)	
+0.1	qaoa_225	225	6330	42	20	181.01915979385376	tensor(1.3528e-34, dtype=torch.float64)	
+0.1	qaoa_144	144	3984	42	20	9.505913496017456	tensor(2.1037e-22, dtype=torch.float64)	
+0.1	qaoa_196	196	5488	42	20	22.160739421844482	tensor(3.1352e-30, dtype=torch.float64)	
+0.1	qaoa_169	169	4706	42	20	16.33074712753296	tensor(3.6306e-26, dtype=torch.float64)	
+0.1	qaoa_121	121	3322	42	20	6.57782506942749	tensor(6.0931e-19, dtype=torch.float64)	
+0.1	qaoa_225	225	6330	42	20	80.5700933933258	tensor(1.3528e-34, dtype=torch.float64)	
+0.1	qaoa_144	144	3984	42	20	8.891823053359985	tensor(2.1032e-22, dtype=torch.float64)	
+0.1	qaoa_196	196	5488	42	20	61.53084874153137	tensor(3.1346e-30, dtype=torch.float64)	
+0.1	qaoa_169	169	4706	42	20	17.096548795700073	tensor(3.6306e-26, dtype=torch.float64)	
+0.1	qaoa_121	121	3322	42	20	6.780933618545532	tensor(6.0915e-19, dtype=torch.float64)	
+0.1	qaoa_225	225	6330	42	20	169.5842456817627	tensor(1.3528e-34, dtype=torch.float64)	
+0.1	qaoa_144	144	3984	42	20	9.110033750534058	tensor(2.1029e-22, dtype=torch.float64)	
+0.1	qaoa_196	196	5488	42	20	22.63218641281128	tensor(3.1336e-30, dtype=torch.float64)	
+0.1	qaoa_169	169	4706	42	20	16.706960916519165	tensor(3.6299e-26, dtype=torch.float64)	
+0.1	qaoa_121	121	3322	42	20	6.625464677810669	tensor(6.0923e-19, dtype=torch.float64)	
+0.1	qaoa_225	225	6330	42	20	47.25283074378967	tensor(1.3528e-34, dtype=torch.float64)	
+0.1	qaoa_144	144	3984	42	20	9.449728012084961	tensor(2.1033e-22, dtype=torch.float64)	
+0.1	qaoa_196	196	5488	42	20	61.30342745780945	tensor(3.1358e-30, dtype=torch.float64)	
+04.16-16:56:49
+<function folder_enum_test at 0x7f2f87cc9c10>
+04.16-16:59:09
+<function folder_enum_test at 0x7f2f87cc9c10>
+04.16-17:03:17
+<function folder_enum_test at 0x7f2f87cc9c10>
+04.16-17:06:18
+<function folder_enum_test at 0x7f2f87cc9c10>
+04.16-17:10:12
+<function folder_enum_test at 0x7f2f87cc9c10>
+0.1	qaoa_169	169	4706	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_121	121	3322	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_225	225	6330	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_144	144	3984	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_196	196	5488	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 274877906944 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_169	169	4706	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_121	121	3322	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_225	225	6330	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_144	144	3984	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 274877906944 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_196	196	5488	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_169	169	4706	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_121	121	3322	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_225	225	6330	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_144	144	3984	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_196	196	5488	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 549755813888 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_169	169	4706	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_121	121	3322	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_225	225	6330	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_144	144	3984	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_196	196	5488	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_169	169	4706	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 549755813888 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_121	121	3322	42	20	1131.6172723770142	tensor(6.1247e-19, dtype=torch.float64)
+0.1	qaoa_225	225	6330	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_144	144	3984	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_196	196	5488	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+04.16-17:12:41
+<function folder_test at 0x7f2f87cc9ca0>
+04.16-18:01:17
+<function folder_test at 0x7f2f87cc9ca0>
+04.16-20:46:21
+<function folder_test at 0x7f2f87cc9ca0>
+04.16-21:29:54
+<function folder_test at 0x7f2f87cc9ca0>
+04.17-00:14:03
+<function folder_test at 0x7f2f87cc9ca0>
+04.17-00:55:26
+<function noise_number_test at 0x7f2f87cc9dc0>
+04.25-12:17:33
+<function noise_number_test at 0x7f376222bdc0>
+04.25-12:17:47
+<function noise_number_test at 0x7f9c2c2fadc0>
+04.25-12:19:38
+<function noise_number_test at 0x7fbd36f13550>
+0.1	qaoa_100	100	2720	42	0	9.493500709533691	tensor(8.5278e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	2	9.824535369873047	tensor(8.5256e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	4	10.03980565071106	tensor(8.5277e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	6	04.25-12:23:31
+<function noise_number_test at 0x7fd5fe446dc0>
+0.1	qaoa_100	100	2720	42	0	20.45464515686035	tensor(8.5278e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	2	36.098172187805176	tensor(8.5183e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	4	68.26925468444824	tensor(8.5207e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	6	95.35546588897705	tensor(8.5211e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	8	122.87129426002502	tensor(8.5184e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	10	150.6367506980896	tensor(8.5174e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	12	181.99961948394775	tensor(8.5052e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	14	211.13765382766724	tensor(8.4965e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	16	244.29310774803162	tensor(8.5033e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	18	282.54984402656555	tensor(8.5089e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	20	296.2624273300171	tensor(8.5002e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	0	4.664931535720825	tensor(8.5278e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	2	33.47789406776428	tensor(8.5230e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	4	62.429255962371826	tensor(8.5260e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	6	93.03158402442932	tensor(8.5241e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	8	120.14655613899231	tensor(8.5214e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	10	151.15911316871643	tensor(8.5162e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	12	181.067613363266	tensor(8.5100e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	14	207.31635451316833	tensor(8.5086e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	16	236.87899613380432	tensor(8.5021e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	18	271.56471729278564	tensor(8.5174e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	20	296.1256504058838	tensor(8.4983e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	0	4.695246458053589	tensor(8.5278e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	2	33.49115753173828	tensor(8.5231e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	4	62.890342473983765	tensor(8.5198e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	6	92.12137341499329	tensor(8.5188e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	8	121.37786221504211	tensor(8.5152e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	10	149.7570219039917	tensor(8.5211e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	12	179.61431312561035	tensor(8.5064e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	14	207.6723301410675	tensor(8.5057e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	16	236.8184757232666	tensor(8.5054e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	18	289.60300731658936	tensor(8.5084e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	20	297.4340350627899	tensor(8.4935e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	0	4.636932849884033	tensor(8.5278e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	2	33.57883167266846	tensor(8.5256e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	4	62.23238253593445	tensor(8.5268e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	6	91.33909893035889	tensor(8.5235e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	8	120.74535942077637	tensor(8.5136e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	10	152.41787719726562	tensor(8.5052e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	12	182.69377279281616	tensor(8.5083e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	14	211.59707880020142	tensor(8.5131e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	16	241.19875168800354	tensor(8.5063e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	18	270.58506774902344	tensor(8.4966e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	20	300.11282229423523	tensor(8.4998e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	0	4.730749845504761	tensor(8.5278e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	2	33.843533992767334	tensor(8.5278e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	4	63.72154712677002	tensor(8.5195e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	6	91.77291941642761	tensor(8.5195e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	8	120.49079966545105	tensor(8.5179e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	10	149.43374848365784	tensor(8.5161e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	12	178.69885969161987	tensor(8.5225e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	14	213.6426181793213	tensor(8.5118e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	16	236.52714920043945	tensor(8.4940e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	18	265.08495354652405	tensor(8.5034e-16, dtype=torch.float64)	
+0.1	qaoa_100	100	2720	42	20	302.3950226306915	tensor(8.4958e-16, dtype=torch.float64)	
+04.25-12:25:17
+<function noise_number_test at 0x7f3d92b6cdc0>
+04.25-12:53:58
+<function noise_number_test at 0x7f3d92b6cdc0>
+04.25-13:21:46
+<function noise_number_test at 0x7f3d92b6cdc0>
+04.25-13:49:53
+<function noise_number_test at 0x7f3d92b6cdc0>
+04.25-14:17:55
+<function noise_number_test at 0x7f3d92b6cdc0>
+0.1	qaoa_100	100	2720	42	0	9.456987857818604	tensor(8.5278e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	2	10.520359992980957	tensor(8.5289e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	4	10.505065202713013	tensor(8.5266e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	6	10.494384050369263	tensor(8.5261e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	8	10.51442551612854	tensor(8.5283e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	10	20.110794067382812	tensor(8.5248e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	12	66.4829773902893	tensor(8.5239e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	14	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 4398046511104 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_100	100	2720	42	16	19.51491355895996	tensor(8.5254e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	18	1243.1879298686981	tensor(8.5305e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	20	956.1114265918732	tensor(8.5210e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	0	10.283885717391968	tensor(8.5278e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	2	9.825696468353271	tensor(8.5288e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	4	9.894795894622803	tensor(8.5288e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	6	10.04103708267212	tensor(8.5245e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	8	19.6264705657959	tensor(8.5258e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	10	33.27505373954773	tensor(8.5305e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	12	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 549755813888 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_100	100	2720	42	14	16.803112983703613	tensor(8.5280e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	16	621.3748304843903	tensor(8.5328e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	18	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 8796093022208 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_100	100	2720	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_100	100	2720	42	0	16.35073232650757	tensor(8.5278e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	2	17.66240882873535	tensor(8.5278e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	4	17.95395565032959	tensor(8.5268e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	6	51.606093645095825	tensor(8.5235e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	8	19.839359521865845	tensor(8.5295e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	10	55.34149193763733	tensor(8.5289e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	12	26.268925666809082	tensor(8.5216e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	14	170.1902048587799	tensor(8.5233e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	16	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_100	100	2720	42	18	777.1210265159607	tensor(8.5212e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 1099511627776 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_100	100	2720	42	0	19.35950231552124	tensor(8.5278e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	2	21.177528381347656	tensor(8.5289e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	4	20.463805437088013	tensor(8.5279e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	6	22.9877667427063	tensor(8.5302e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	8	27.00525212287903	tensor(8.5235e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	10	251.74799513816833	tensor(8.5281e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	12	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 2199023255552 bytes. Error code 12 (Cannot allocate memory)
+0.1	qaoa_100	100	2720	42	14	117.52145648002625	tensor(8.5227e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	16	22442.79404401779	tensor(8.5316e-16, dtype=torch.float64)
+0.1	qaoa_100	100	2720	42	18	05.10-12:02:05
+<function noise_number_test at 0x7fd03e9ccf70>
+0.1	simple	4	29	26	10	0.1470491886138916	tensor(0.9983, dtype=torch.float64)
+0.1	adder_4	4	15	10	10	0.030206680297851562	tensor(0.9994, dtype=torch.float64)
+0.1	4-qubit-full-adder	4	29	26	10	0.0419461727142334	tensor(0.9984, dtype=torch.float64)
+0.1	qmy	4	25	13	10	0.0360410213470459	tensor(0.0934, dtype=torch.float64)
+0.1	011_3_qubit_grover_50_	5	96	55	10	0.06887054443359375	tensor(0.1778, dtype=torch.float64)
+0.1	4qbit-random-circ-new	4	27	16	10	0.025221586227416992	tensor(0.2557, dtype=torch.float64)
+0.1	4qbit-random-circ	4	25	13	10	0.019172191619873047	tensor(0.0927, dtype=torch.float64)
+0.1	7x1mod15	5	14	10	10	0.01655745506286621	tensor(0.0004, dtype=torch.float64)
+0.1	simple	4	29	26	10	0.029247283935546875	tensor(0.9986, dtype=torch.float64)
+0.1	adder_4	4	15	10	10	0.01891922950744629	tensor(0.9989, dtype=torch.float64)
+0.1	4-qubit-full-adder	4	29	26	10	0.024712800979614258	tensor(0.9979, dtype=torch.float64)
+0.1	qmy	4	25	13	10	0.05254387855529785	tensor(0.0935, dtype=torch.float64)
+0.1	011_3_qubit_grover_50_	5	96	55	10	0.09950780868530273	tensor(0.1779, dtype=torch.float64)
+0.1	4qbit-random-circ-new	4	27	16	10	0.05893731117248535	tensor(0.2557, dtype=torch.float64)
+0.1	4qbit-random-circ	4	25	13	10	0.060733795166015625	tensor(0.0935, dtype=torch.float64)
+0.1	7x1mod15	5	14	10	10	0.022033214569091797	tensor(1.2494e-05, dtype=torch.float64)
+0.1	simple	4	29	26	10	0.035939693450927734	tensor(0.9984, dtype=torch.float64)
+0.1	adder_4	4	15	10	10	0.016869068145751953	tensor(0.9992, dtype=torch.float64)
+0.1	4-qubit-full-adder	4	29	26	10	0.023427724838256836	tensor(0.9989, dtype=torch.float64)
+0.1	qmy	4	25	13	10	0.01846623420715332	tensor(0.0926, dtype=torch.float64)
+0.1	011_3_qubit_grover_50_	5	96	55	10	0.04933500289916992	tensor(0.1779, dtype=torch.float64)
+0.1	4qbit-random-circ-new	4	27	16	10	0.022980928421020508	tensor(0.2558, dtype=torch.float64)
+0.1	4qbit-random-circ	4	25	13	10	0.03175830841064453	tensor(0.0937, dtype=torch.float64)
+0.1	7x1mod15	5	14	10	10	0.019665956497192383	tensor(0.0004, dtype=torch.float64)
+0.1	simple	4	29	26	10	0.03529834747314453	tensor(0.9984, dtype=torch.float64)
+0.1	adder_4	4	15	10	10	0.01396632194519043	tensor(0.9992, dtype=torch.float64)
+0.1	4-qubit-full-adder	4	29	26	10	0.027532339096069336	tensor(0.9983, dtype=torch.float64)
+0.1	qmy	4	25	13	10	0.05368781089782715	tensor(0.0938, dtype=torch.float64)
+0.1	011_3_qubit_grover_50_	5	96	55	10	0.07141971588134766	tensor(0.1780, dtype=torch.float64)
+0.1	4qbit-random-circ-new	4	27	16	10	0.04375600814819336	tensor(0.2556, dtype=torch.float64)
+0.1	4qbit-random-circ	4	25	13	10	0.03300309181213379	tensor(0.0940, dtype=torch.float64)
+0.1	7x1mod15	5	14	10	10	0.03353548049926758	tensor(0.0004, dtype=torch.float64)
+0.1	simple	4	29	26	10	0.04522418975830078	tensor(0.9987, dtype=torch.float64)
+0.1	adder_4	4	15	10	10	0.029134511947631836	tensor(0.9992, dtype=torch.float64)
+0.1	4-qubit-full-adder	4	29	26	10	0.036356449127197266	tensor(0.9983, dtype=torch.float64)
+0.1	qmy	4	25	13	10	0.03420853614807129	tensor(0.0928, dtype=torch.float64)
+0.1	011_3_qubit_grover_50_	5	96	55	10	0.07740044593811035	tensor(0.1775, dtype=torch.float64)
+0.1	4qbit-random-circ-new	4	27	16	10	0.022115707397460938	tensor(0.2553, dtype=torch.float64)
+0.1	4qbit-random-circ	4	25	13	10	0.029696226119995117	tensor(0.0937, dtype=torch.float64)
+0.1	7x1mod15	5	14	10	10	0.014052391052246094	tensor(0.0002, dtype=torch.float64)
+
+05.10-13:38:16
+<function folder_test at 0x7fba6ce3be50>
+0.1	qmy	2	4	4	2	0.10440802574157715	tensor(0.0224, dtype=torch.float64)
+0.1	qmy	2	4	4	2	0.012292861938476562	tensor(0.0002, dtype=torch.float64)
+0.1	qmy	2	4	4	2	0.02298712730407715	tensor(0.0002, dtype=torch.float64)
+0.1	qmy	2	4	4	2	0.04599452018737793	tensor(0.0158, dtype=torch.float64)
+0.1	qmy	2	4	4	2	0.04716777801513672	tensor(0.0158, dtype=torch.float64)
+05.10-13:41:08
+<function folder_test at 0x7fa5e3e5ce50>
+05.10-13:41:16
+<function folder_test at 0x7fa5e3e5ce50>
+05.10-13:41:16
+<function folder_test at 0x7fa5e3e5ce50>
+05.10-13:41:17
+<function folder_test at 0x7fa5e3e5ce50>
+05.10-13:41:17
+<function folder_test at 0x7fa5e3e5ce50>
+0.1	qmy	2	4	4	0	0.01799607276916504	tensor(0., dtype=torch.float64)
+05.10-13:53:13
+<function folder_test at 0x7f6d330e4e50>
+0.1	qmy	2	4	4	1	0.06832098960876465	tensor(0.0500, dtype=torch.float64)
+05.10-13:53:39
+<function folder_test at 0x7f877b0dae50>
+0.1	qmy	2	4	4	2	0.09232473373413086	tensor(0.0025, dtype=torch.float64)
+05.10-14:07:13
+<function folder_test at 0x7f06f48e7e50>
+0.1	qmy	2	4	4	2	0.06803250312805176	tensor(0.0499, dtype=torch.float64)
+05.10-14:08:20
+<function folder_test at 0x7f35d1c6fe50>
+0.1	qmy	2	4	4	2	4.192627191543579	tensor(0., dtype=torch.float64)	
+05.10-14:19:19
+<function folder_enum_test at 0x7fa866e67dc0>
+0.1	qmy	2	4	4	2	0.06585454940795898	tensor(0.0499, dtype=torch.float64)
+05.10-14:20:36
+<function folder_test at 0x7fdab39cae50>
+0.1	qmy	2	4	4	2	0.05488729476928711	tensor(0., dtype=torch.float64)	
+05.10-14:20:39
+<function folder_enum_test at 0x7fdab39cadc0>
+0.1	qmy	2	4	4	2	0.013830900192260742	tensor(0.9975, dtype=torch.float64)	
+05.10-14:21:14
+<function folder_test at 0x7ff8eb880e50>
+0.1	qmy	2	4	4	2	0.054474830627441406	tensor(0., dtype=torch.float64)	
+05.10-14:21:16
+<function folder_enum_test at 0x7ff8eb880dc0>
+0.1	qmy	2	4	4	2	0.03102397918701172	tensor(0.9988, dtype=torch.float64)	
+05.10-14:30:40
+<function folder_test at 0x7f5157ef3e50>
+0.1	qmy	2	4	4	2	0.05980849266052246	tensor(0.9938, dtype=torch.float64)	
+05.10-14:30:51
+<function folder_enum_test at 0x7f5157ef3dc0>
+0.1	qmy	2	4	4	2	0.017218828201293945	tensor(0.9988, dtype=torch.float64)	
+05.10-19:21:02
+<function folder_test at 0x7fe804ccfe50>
+0.1	qmy	2	4	4	2	0.3432784080505371	tensor(0.9975, dtype=torch.float64)	
+05.10-19:21:07
+<function folder_enum_test at 0x7fe804ccfdc0>
+0.1	qmy	2	4	4	2	0.012394905090332031	tensor(0.9975, dtype=torch.float64)	
+05.10-19:21:24
+<function folder_test at 0x7fc84bc77e50>
+0.1	qmy	2	4	4	2	0.7788357734680176	tensor(0.9988, dtype=torch.float64)	
+05.10-19:21:25
+<function folder_enum_test at 0x7fc84bc77dc0>
+05.11-12:56:08
+<function folder_test at 0x7f9cf0c53310>
+qmy	2	4	4	5	05.11-12:56:36
+<function folder_test at 0x7ff24bd57310>
+qmy	2	4	4	5	qmy	2	4	4	2	0.0175015926361084	tensor(0.9975, dtype=torch.float64)	
+05.11-13:02:44
+<function folder_test at 0x7f8dee1bfee0>
+qmy	2	4	4	2	1.8016791343688965	tensor(0.9975, dtype=torch.float64)	
+05.11-13:02:49
+<function folder_enum_test at 0x7f8deaf10f70>
+qmy	2	4	4	2	0.018398046493530273	tensor(0.9975, dtype=torch.float64)	
+05.11-13:03:24
+<function folder_test at 0x7f5bf7a8eee0>
+qmy	2	4	4	2	1.1374106407165527	tensor(0.9988, dtype=torch.float64)	
+05.11-13:03:25
+<function folder_enum_test at 0x7f5bf47ddf70>
+qmy	2	4	4	2	0.01661062240600586	tensor(0.9988, dtype=torch.float64)	
+05.11-13:04:11
+<function folder_test at 0x7f8c8d648ee0>
+qmy	2	4	4	2	0.8359620571136475	tensor(0.9987, dtype=torch.float64)	
+05.11-13:04:13
+<function folder_enum_test at 0x7f8c8a396f70>
+qmy	2	4	4	2	0.016300678253173828	tensor(1., dtype=torch.float64)	
+05.11-13:04:22
+<function folder_test at 0x7f83c62ccee0>
+qmy	2	4	4	2	1.1958558559417725	tensor(0.9988, dtype=torch.float64)	
+05.11-13:04:24
+<function folder_enum_test at 0x7f83c301af70>
+qmy	40	962	177	2	0.0534825325012207	tensor(0.9943, dtype=torch.float64)	
+05.11-13:15:06
+<function folder_test at 0x7fb7cf451310>
+qmy	40	962	177	2	15.238839864730835	tensor(3.4904e-08, dtype=torch.float64)	
+05.11-13:15:18
+<function folder_enum_test at 0x7fb7cbfe2f70>
+qmy	4	29	26	2	0.026187419891357422	tensor(0.9979, dtype=torch.float64)	
+05.11-13:16:54
+<function folder_test at 0x7fc748ed8ee0>
+qmy	4	29	26	2	1.6071619987487793	tensor(0.9203, dtype=torch.float64)	
+05.11-13:17:07
+<function folder_enum_test at 0x7fc745c29f70>
+qmy	4	29	26	2	0.02352118492126465	tensor(0.9979, dtype=torch.float64)	
+05.11-13:25:03
+<function folder_test at 0x7f744ca10310>
+qmy	4	29	26	2	'Tensor' object has no attribute 'conjugate'
+05.11-13:25:18
+<function folder_enum_test at 0x7f74495a1f70>
+qmy	4	29	26	2	0.017456531524658203	tensor(0.9979, dtype=torch.float64)	
+05.11-13:25:33
+<function folder_test at 0x7f4a0a4c2310>
+qmy	4	29	26	2	05.11-13:25:36
+<function folder_enum_test at 0x7f4a07050f70>
+qmy	4	29	26	2	0.020514965057373047	tensor(0.9979, dtype=torch.float64)	
+05.11-13:28:01
+<function folder_test at 0x7fd905ff4310>
+qmy	4	29	26	2	05.11-13:28:14
+<function folder_enum_test at 0x7fd902b82f70>
+qmy	4	29	26	2	0.017275571823120117	tensor(0.9979, dtype=torch.float64)	
+05.11-13:28:30
+<function folder_test at 0x7f2364fd3310>
+qmy	4	29	26	2	05.11-13:28:32
+<function folder_enum_test at 0x7f2361b63f70>
+qmy	4	29	26	2	0.017827749252319336	tensor(0.9979, dtype=torch.float64)	
+05.11-13:28:47
+<function folder_test at 0x7f633ae97310>
+qmy	4	29	26	2	05.11-13:28:49
+<function folder_enum_test at 0x7f6337a28f70>
+qmy	4	29	26	2	0.03419303894042969	tensor(0.9979, dtype=torch.float64)	
+05.11-13:29:12
+<function folder_test at 0x7f8f94432790>
+qmy	4	29	26	2	05.11-13:30:43
+<function folder_enum_test at 0x7f8f94432700>
+qmy	4	29	26	2	0.03250002861022949	tensor(0.9979, dtype=torch.float64)	
+05.11-13:32:12
+<function folder_test at 0x7f5c878c3790>
+qmy	4	29	26	2	qmy	4	29	26	2	0.0190579891204834	tensor(0.9979, dtype=torch.float64)	
+05.11-13:33:49
+<function folder_test at 0x7f93093b6310>
+qmy	4	29	26	2	05.11-13:34:03
+<function folder_enum_test at 0x7f9305f43f70>
+qmy	4	29	26	2	0.02652430534362793	tensor(0.9979, dtype=torch.float64)	
+05.11-13:34:25
+<function folder_test at 0x7fe743af3790>
+qmy	4	29	26	2	qmy	4	29	26	2	0.023533105850219727	tensor(0.9979, dtype=torch.float64)	
+05.11-13:37:45
+<function folder_test at 0x7ff652138310>
+qmy	4	29	26	2	1.8607778549194336	0.9204755844135892	
+05.11-13:38:01
+<function folder_enum_test at 0x7ff64ecc6f70>
+qmy	4	29	26	2	0.0180361270904541	tensor(0.9979, dtype=torch.float64)	
+05.11-13:40:40
+<function folder_test at 0x7ff52f3faee0>
+qmy	4	29	26	2	1.2643742561340332	0.9204755844135891	
+05.11-13:40:45
+<function folder_enum_test at 0x7ff52c14af70>
+qmy	4	29	26	2	0.027727127075195312	tensor(0.9979, dtype=torch.float64)	
+05.11-13:43:20
+<function folder_test at 0x7f909d80a790>
+qmy	4	29	26	2	qmy	4	29	26	2	0.02907085418701172	tensor(0.9979, dtype=torch.float64)	
+05.11-13:47:08
+<function folder_test at 0x7fea0b56a790>
+qmy	4	29	26	2	qmy	4	29	26	2	0.03739643096923828	tensor(0.9979, dtype=torch.float64)	
+05.11-13:56:32
+<function folder_test at 0x7f782fbef310>
+qmy	4	29	26	2	2.192014455795288	0.9204755844135889	
+05.11-13:56:56
+<function folder_enum_test at 0x7f782c77df70>
+qmy	4	29	26	2	0.020360469818115234	tensor(0.9979, dtype=torch.float64)	
+05.11-13:59:24
+<function folder_test at 0x7fa288918310>
+qmy	4	29	26	2	1.1259846687316895	0.9204755844135893	
+05.11-13:59:50
+<function folder_enum_test at 0x7fa2854a6f70>
+qmy	4	29	26	2	0.025910377502441406	tensor(0.9979, dtype=torch.float64)	
+05.11-14:01:00
+<function folder_test at 0x7f079e3d0310>
+qmy	4	29	26	2	2.044098138809204	0.9204755844135892	
+05.11-14:01:11
+<function folder_enum_test at 0x7f079af5ef70>
+qmy	4	29	26	2	0.030356645584106445	tensor(0.9979, dtype=torch.float64)	
+05.11-14:01:47
+<function folder_test at 0x7f2c94ca0790>
+qmy	4	29	26	2	qmy	4	29	26	2	0.02231144905090332	tensor(0.9979, dtype=torch.float64)	
+05.11-14:02:53
+<function folder_test at 0x7f19fbaa2310>
+qmy	4	29	26	2	1.6935081481933594	0.9979074510053432	
+05.11-14:03:03
+<function folder_enum_test at 0x7f19f8630f70>
+qmy	4	29	26	2	0.027689456939697266	tensor(0.9979, dtype=torch.float64)	
+05.11-14:25:17
+<function folder_test at 0x7f414ed11310>
+qmy	4	29	26	2	1.5994017124176025	0.9979074510053431	
+05.11-14:25:38
+<function folder_enum_test at 0x7f414b89ff70>
+qmy	4	29	26	2	0.04167461395263672	tensor(0.9979, dtype=torch.float64)	
+05.11-14:29:53
+<function folder_test at 0x7fbe0350aee0>
+qmy	4	29	26	2	1.7757160663604736	0.9979074510053431	
+05.11-14:30:13
+<function folder_enum_test at 0x7fbe0025af70>
+qmy	4	29	26	2	17.059669256210327	0.9979074510053432	
+05.11-14:33:58
+<function folder_enum_test at 0x7fbde8e29f70>
+200.000000	30.000000	qaoa_100	100	2720	42	0	9.160142660140991	tensor(8.5278e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	2	38.59079456329346	tensor(8.4543e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	4	66.78442645072937	tensor(8.4069e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	6	96.79928374290466	tensor(8.4075e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	8	128.49751591682434	tensor(8.4767e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	10	187.6548798084259	tensor(8.3345e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	12	202.76075839996338	tensor(8.3174e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	14	233.464262008667	tensor(8.3620e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	16	291.91711139678955	tensor(8.2775e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	18	335.3228635787964	tensor(8.0883e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	20	331.91070580482483	tensor(8.1176e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	22	323.2618272304535	tensor(8.1042e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	24	451.33940291404724	tensor(8.0551e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	26	463.1254427433014	tensor(8.0564e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	28	518.3752710819244	tensor(7.7407e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	30	536.5133152008057	tensor(7.9937e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	32	559.6513314247131	tensor(7.9907e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	34	602.2508671283722	tensor(7.8443e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	36	622.975396156311	tensor(7.5600e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	38	656.1105110645294	tensor(7.7298e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	40	708.5730068683624	tensor(7.8297e-16, dtype=torch.float64)	
+05.14-23:49:31
+<function noise_number_test at 0x7ff9fb0391f0>
+200.000000	30.000000	qaoa_169	169	4706	42	20	0.6863391399383545	0.9289652430897083	
+200.000000	30.000000	qaoa_121	121	3322	42	20	0.578446626663208	0.9301270818154469	
+200.000000	30.000000	qaoa_225	225	6330	42	20	0.9236462116241455	0.9289652430897086	
+200.000000	30.000000	qaoa_144	144	3984	42	20	0.6540617942810059	0.9289652430897087	
+200.000000	30.000000	qaoa_196	196	5488	42	20	0.8160510063171387	0.9289652430897081	
+05.15-14:29:38
+<function folder_test at 0x7f7daa711040>
+200.000000	30.000000	qaoa_169	169	4706	42	20	41.710904598236084	tensor(3.6104e-26, dtype=torch.float64)
+200.000000	30.000000	qaoa_121	121	3322	42	20	20.062042236328125	tensor(6.0571e-19, dtype=torch.float64)
+200.000000	30.000000	qaoa_225	225	6330	42	20	05.15-14:30:19
+<function folder_test at 0x7fab1bcd7040>
+200.000000	30.000000	qaoa_35	35	826	158	20	1.0399200916290283	tensor(3.2474e-08, dtype=torch.float64)
+200.000000	30.000000	qaoa_20	20	432	81	20	0.2437143325805664	tensor(0.0002, dtype=torch.float64)
+200.000000	30.000000	qaoa_10	10	188	90	20	0.0832366943359375	tensor(0.0078, dtype=torch.float64)
+200.000000	30.000000	qaoa_30	30	676	158	20	0.7742154598236084	tensor(2.1563e-06, dtype=torch.float64)
+200.000000	30.000000	qaoa_25	25	554	81	20	0.6539716720581055	tensor(0.0002, dtype=torch.float64)
+200.000000	30.000000	qaoa_100	100	2720	42	20	10.783228874206543	tensor(8.4798e-16, dtype=torch.float64)
+200.000000	30.000000	qaoa_15	15	296	99	20	0.15956497192382812	tensor(0.0020, dtype=torch.float64)
+200.000000	30.000000	qaoa_64	64	1696	42	20	3.6571524143218994	tensor(2.2988e-10, dtype=torch.float64)
+200.000000	30.000000	qaoa_48	48	1188	196	20	1.8258185386657715	tensor(2.6874e-09, dtype=torch.float64)
+200.000000	30.000000	qaoa_80	80	2148	42	20	5.733077526092529	tensor(8.9709e-13, dtype=torch.float64)
+200.000000	30.000000	qaoa_40	40	962	177	20	1.16141939163208	tensor(5.5699e-08, dtype=torch.float64)
+200.000000	30.000000	qaoa_6	6	110	32	20	0.04805612564086914	tensor(0.1252, dtype=torch.float64)
+200.000000	30.000000	qaoa_72	72	1922	42	20	4.086947441101074	tensor(1.4431e-11, dtype=torch.float64)
+200.000000	30.000000	qaoa_45	45	1112	196	20	1.724839687347412	tensor(2.0800e-09, dtype=torch.float64)
+05.15-14:32:57
+<function folder_test at 0x7f96c27f9040>
+200.000000	30.000000	qaoa_35	35	826	158	20	1.0730493068695068	tensor(4.9753e-08, dtype=torch.float64)
+200.000000	30.000000	qaoa_20	20	432	81	20	0.24941086769104004	tensor(0.0002, dtype=torch.float64)
+200.000000	30.000000	qaoa_10	10	188	90	20	0.0897219181060791	tensor(0.0090, dtype=torch.float64)
+200.000000	30.000000	qaoa_30	30	676	158	20	0.7369513511657715	tensor(2.5390e-06, dtype=torch.float64)
+200.000000	30.000000	qaoa_25	25	554	81	20	0.590477705001831	tensor(0.0002, dtype=torch.float64)
+200.000000	30.000000	qaoa_100	100	2720	42	20	[enforce fail at CPUAllocator.cpp:61] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 17592186044416 bytes. Error code 12 (Cannot allocate memory)
+200.000000	30.000000	qaoa_15	15	296	99	20	0.15483450889587402	tensor(0.0021, dtype=torch.float64)
+200.000000	30.000000	qaoa_64	64	1696	42	20	5.595335245132446	tensor(2.3108e-10, dtype=torch.float64)
+200.000000	30.000000	qaoa_48	48	1188	196	20	2.0348477363586426	tensor(2.8750e-09, dtype=torch.float64)
+200.000000	30.000000	qaoa_80	80	2148	42	20	339.1714482307434	tensor(9.0495e-13, dtype=torch.float64)
+200.000000	30.000000	qaoa_40	40	962	177	20	1.1959986686706543	tensor(6.1475e-08, dtype=torch.float64)
+200.000000	30.000000	qaoa_6	6	110	32	20	0.059719085693359375	tensor(0.1244, dtype=torch.float64)
+200.000000	30.000000	qaoa_72	72	1922	42	20	406.54968547821045	tensor(1.4562e-11, dtype=torch.float64)
+200.000000	30.000000	qaoa_45	45	1112	196	20	1.736302137374878	tensor(2.3192e-09, dtype=torch.float64)
+05.15-14:34:17
+<function folder_test at 0x7f7d7aeac040>
+200.000000	30.000000	qaoa_35	35	826	158	20	05.15-14:48:19
+<function folder_test at 0x7fdc6af23040>
+200.000000	30.000000	qaoa_100	100	2720	42	22	344.9111557006836	tensor(8.1816e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	24	366.30704069137573	tensor(8.0216e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	26	417.77013993263245	tensor(8.0706e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	28	505.6945803165436	tensor(7.9524e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	30	532.6414346694946	tensor(8.0130e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	32	572.3488826751709	tensor(7.9231e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	34	611.30703997612	tensor(7.6382e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	36	664.4016265869141	tensor(7.9919e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	38	711.3947248458862	tensor(7.6661e-16, dtype=torch.float64)	
+200.000000	30.000000	qaoa_100	100	2720	42	40	723.1744892597198	tensor(7.6924e-16, dtype=torch.float64)	
+05.15-14:49:11
+<function noise_number_test at 0x7fe2bfbf41f0>
