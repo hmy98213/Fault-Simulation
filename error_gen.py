@@ -43,13 +43,21 @@ def gen_depolorizing_gate(p):
 def mat_rep_svd(M):
     M = np.transpose(M, (0, 2, 1, 3))
     M = np.reshape(M, (4, 4))
+    print(M)
     u, s, vh = np.linalg.svd(M)
+    # print(u)
+    # print(s)
+    # print(vh)
     res = [[], s.copy(), []]
     for i in range(4):
         ui = np.reshape(u[: , i], (2, 2))
         vhi = np.reshape(vh[i, :], (2, 2))
         res[0].append(ui)
         res[2].append(vhi)
+    print(res)
+    for mat in res[2]:
+        for i in range(2):
+            print(f'{mat[i][0]} & {mat[i][1]}')
     return res
 
 def mat_distance(M1, M2):
@@ -79,9 +87,12 @@ if __name__ == '__main__':
     # bound = (1+8*p)**10-1-10*4*p*(1+4*p)**9
     # print(bound)
     
-    M = gen_depolorizing_gate(0.0001)
+    M = gen_depolorizing_gate(0.01)
+    M = np.reshape(M, (2, 2, 2, 2))
+    # print(M)
+    mat_rep_svd(M)
     p = distance_with_identity(M)
-    print(p)
+    # print(p)
 
 
 

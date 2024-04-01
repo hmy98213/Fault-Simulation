@@ -108,6 +108,14 @@ class QCTN:
             print(self.error_pos)
             f.write(str(self.error_num)+"\t")
 
+    def cir_apply(self, qubits):
+        for gate in self.cir.data:
+            mat = np.matrix(gate[0].to_matrix()).H
+            mat = np.array(mat)
+            if(mat.shape[0]!=2): mat = matrix_to_tensor(mat)
+            operating_qubits = [x.index for x in gate[1]]
+            apply_gate(qubits, mat, operating_qubits)
+
     def error_cir_apply_enumurate(self, qubits, op_list):
         cnt = 0
         pos = 0
@@ -375,6 +383,22 @@ class QCTN:
                 tn.connect(start_wires1[i], left_vec1[i][0])
                 tn.connect(qubits1[i], right_vec1[i][0])
 
+    def construct_tn_no_error(self, ps1, ps2):
+       with tn.NodeCollection(self.all_nodes):
+            left_vec= arr_to_tnvec(ps1)
+            right_vec = arr_to_tnvec(ps2)
+            start_gates = [
+                tn.Node(np.eye(2, dtype=complex)) for _ in range(self.cir.num_qubits)
+            ]
+
+            qubits = [node[1] for node in start_gates]
+            start_wires = [node[0] for node in start_gates]
+            self.cir_apply(qubits)
+
+            for i in range(self.cir.num_qubits):
+                tn.connect(start_wires[i], left_vec[i][0])
+                tn.connect(qubits[i], right_vec[i][0])
+
     # Circuit for equivalence checking (acurate algorithm)
     def construct_tn_eqc(self, ps1, all_crz_fault = False):
         with tn.NodeCollection(self.all_nodes):
@@ -481,7 +505,7 @@ class QCTN:
             with open(output, 'a') as f:
                 f.write(str(e)+"\n")
 
-    def enumurate_io(self, output ,error_num = 0, random_pos = True, ps1 = [], ps2= [], enum = 1):
+    def enumurate_io(self, output, error_num = 0, random_pos = True, ps1 = [], ps2= [], enum = 1):
         self.set_error(error_num, random_pos)
         self.print_info(output)
         if (len(ps1)>0 or len(ps2)>0):
@@ -512,6 +536,32 @@ class QCTN:
                 f.write(str(res)+"\t")
                 f.write("\n")
             return res
+        except TimeoutException as e:
+            with open(output, 'a') as f:
+                f.write(str(e)+"\n")
+        except Exception as e:
+            # raise
+            with open(output, 'a') as f:
+                f.write(str(e)+"\n")
+
+    def simu(self, output, ps1 = [], ps2= []):
+        self.all_nodes = []
+        if (len(ps1)>0 or len(ps2)>0):
+            self.set_io(ps1, ps2) 
+        try:
+            self.construct_tn_no_error(self.ps1, self.ps2)
+            t_start = time.time()
+            result = tn.contractors.auto(self.all_nodes).tensor
+            # result = np.abs(result)
+            # result = np.sqrt(result)
+            with open(output, 'a') as f:
+                run_time = time.time() - t_start
+                print("run time: ", run_time)
+                f.write(str(run_time)+"\t")
+                print(result)
+                f.write(str(result)+"\t")
+                f.write("\n")
+            return result
         except TimeoutException as e:
             with open(output, 'a') as f:
                 f.write(str(e)+"\n")
