@@ -15,6 +15,11 @@ from verification_by_qiskit import qiskit_simulate
 warnings.filterwarnings("ignore")
 
 # Class for the tensor network of a noisy quantum circuit
+# cir: quantum circuit
+# ps1: input state, must be a tensor product state, represented by a list of numpy arrays, 
+# e.g. ps1 = [np.array([1.0, 0], dtype=complex), np.array([1.0, 0], dtype=complex)] represents zero state
+# ps2: measurement defined by a state, also must be a tensor product state
+# ps1 and ps2 are all default to be zero state.
 class QCTN:
     cir = None # Quantum circuit
     all_nodes = [] # Tensor nodes
@@ -379,7 +384,7 @@ class QCTN:
                     tmp0 = tn.contractors.auto(self.all_nodes).tensor
                     self.all_nodes = []
                     self.construct_enumurate_tn(self.ps1, self.ps2, op_list[2])
-                    tmp1 = tn.contractors.auto(self.all_nodes).tensor
+                    tmp1 = tn.contractors.auto(self.all_nodes).tensor.conjugate()
                     tmp = tmp0 * tmp1
                     for i in op_list[1]: tmp *= i
                     res += tmp

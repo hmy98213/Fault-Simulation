@@ -53,7 +53,7 @@ def mat_rep_svd(M):
         ui = np.reshape(u[: , i], (2, 2))
         vhi = np.reshape(vh[i, :], (2, 2))
         res[0].append(ui)
-        res[2].append(vhi)
+        res[2].append(vhi.conjugate())
     # print(res)
     # for mat in res[2]:
     #     for i in range(2):
@@ -82,16 +82,18 @@ def veri_svd(res):
 
 if __name__ == '__main__':
     # M = gen_noise_gate(T_ONE_TIME, T_TWO_TIME, DELTA_T)
-    # p = distance_with_identity(M)
-    # print(p)
-    # bound = (1+8*p)**10-1-10*4*p*(1+4*p)**9
-    # print(bound)
-    
-    M = gen_depolorizing_gate(0.01)
-    M = np.reshape(M, (2, 2, 2, 2))
-    # print(M)
-    mat_rep_svd(M)
+    M = gen_noise_gate(2000, 300, DELTA_T)
     p = distance_with_identity(M)
+    print(p)
+    N = 5
+    bound = (1+8*p)**N-1-N*4*p*(1+4*p)**(N-1)
+    print(bound)
+    
+    # M = gen_depolorizing_gate(0.01)
+    # M = np.reshape(M, (2, 2, 2, 2))
+    # # print(M)
+    # mat_rep_svd(M)
+    # p = distance_with_identity(M)
     # print(p)
 
 
