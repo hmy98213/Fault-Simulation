@@ -1,31 +1,17 @@
-from ast import Try
 import datetime
 import gc
 import math
 import os
-import random
-import time
 import scipy
 import numpy as np
 import tensornetwork as tn
 import signal
 from contextlib import contextmanager
-from qiskit import QuantumCircuit, Aer
-from qiskit import transpile
-from qiskit.transpiler.passes import RemoveBarriers
-from qiskit.quantum_info import Statevector
-from angle_gen import faulty_gate_2
 class TimeoutException(Exception): pass
 from error_gen import *
 from tn_construction import *
 from verification_by_qiskit import *
 import socket
-# noise_gate = np.zeros((2, 2, 2, 2), dtype=complex)
-# noise_gate[0][0][0][0] = 1
-# noise_gate[0][1][0][1] = noise_gate[1][0][1][0] = 0.98224288
-# noise_gate[1][1][1][1] = 0.99750312
-# noise_gate[1][0][0][1] = 0.00249688
-# noise_gate = np.array(noise_gate)
 
 @contextmanager
 def time_limit(seconds):

@@ -43,7 +43,7 @@ def gen_depolorizing_gate(p):
 def mat_rep_svd(M):
     M = np.transpose(M, (0, 2, 1, 3))
     M = np.reshape(M, (4, 4))
-    print(M)
+    # print(M)
     u, s, vh = np.linalg.svd(M)
     # print(u)
     # print(s)
@@ -54,10 +54,10 @@ def mat_rep_svd(M):
         vhi = np.reshape(vh[i, :], (2, 2))
         res[0].append(ui)
         res[2].append(vhi)
-    print(res)
-    for mat in res[2]:
-        for i in range(2):
-            print(f'{mat[i][0]} & {mat[i][1]}')
+    # print(res)
+    # for mat in res[2]:
+    #     for i in range(2):
+    #         print(f'{mat[i][0]} & {mat[i][1]}')
     return res
 
 def mat_distance(M1, M2):

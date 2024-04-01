@@ -6,7 +6,7 @@ import signal
 import time
 from qiskit import *
 from mqt import ddsim
-from my_cpu import TimeoutException, file_to_cir
+from test_cpu import TimeoutException, file_to_cir
 import numpy as np
 
 @contextmanager

@@ -4,8 +4,18 @@ from qiskit_aer.noise import depolarizing_error
 import qiskit.quantum_info as qi
 import math, random
 import numpy as np
+from qiskit.transpiler.passes import RemoveBarriers
 
-from tn_construction import file_to_cir
+def file_to_cir(file, path):
+    with open(path + file,'r') as file:
+        QASM_str = file.read()
+        cir = QuantumCircuit.from_qasm_str(QASM_str)
+        cir.remove_final_measurements()
+        cir = RemoveBarriers()(cir)
+        # cir = transpile(cir, basis_gates=['h', 'x', 'p', 'cp', 'cswap', 'cx', 'swap'])
+        # cir = transpile(cir, basis_gates=['cz', 'u3'], optimization_level=3)
+        # print(cir.size())
+        return cir
 
 def gen_noise_karus(T1, Tphi, t):
     a = math.exp(-t/T1)
@@ -42,14 +52,17 @@ def apply_noise(circ, error_num, error_position, noise_op):
         pos += 1
     return noise_circ
 
-def qiskit_simulate(path, file_name, output_file ,error_num, error_position):
+def qiskit_simulate(path, file_name, error_num, error_position):
     simulator = Aer.get_backend('aer_simulator_density_matrix')
     circ = file_to_cir(file_name, path)
     noise_op = qi.Kraus(gen_noise_karus(200, 30, 0.5))
     noise_circ = apply_noise(circ, error_num, error_position, noise_op)
     noise_circ.save_state()
     result = simulator.run(noise_circ).result()
-    print(result.data(0))
+    # print the first element of the density matrix
+    print(result.data(0)['density_matrix'].data[0][0])
+    # print(result.data(0))
+
 
 if __name__ == '__main__':
     num_qubits = 1
