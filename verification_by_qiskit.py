@@ -5,6 +5,7 @@ import qiskit.quantum_info as qi
 import math, random
 import numpy as np
 from qiskit.transpiler.passes import RemoveBarriers
+from config import NOISE_NUM, NOISE_POS
 
 def file_to_cir(file, path):
     with open(path + file,'r') as file:
@@ -60,7 +61,7 @@ def qiskit_simulate(path, file_name, error_num, error_position):
     noise_circ.save_state()
     result = simulator.run(noise_circ).result()
     # print the first element of the density matrix
-    print(result.data(0)['density_matrix'].data[0][0])
+    print(result.data(0)['density_matrix'].data)
     # print(result.data(0))
 
 
