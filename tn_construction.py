@@ -451,7 +451,7 @@ class QCTN:
             # For test
             result = tn.contractors.auto(
                 self.all_nodes, output_edge_order=qubits
-            ).tensor
+            ).tensor.conjugate()
             with open(output, "a") as f:
                 run_time = time.time() - t_start
                 print("run time: ", run_time)
@@ -759,27 +759,27 @@ def apply_error2(qubits0, qubits1, noise_gate, error_qubits):
 if __name__ == "__main__":
     # test_tn = QCTN("inst_4x4_10_0.qasm", "Benchmarks/inst_TN/")
     output = "test_result.txt"
-    # circuit_file = 'simple.qasm'
-    circuit_file = "rand_cliff_2_AG.qasm"
-    # folder = './Benchmarks/Simple/'
-    folder = "./Benchmarks/RC/"
+    circuit_file = 'simple.qasm'
+    # circuit_file = "rand_cliff_2_AG.qasm"
+    folder = './Benchmarks/Simple/'
+    # folder = "./Benchmarks/RC/"
     test_tn = QCTN(circuit_file, folder)
     # Noiseless Simulation
     test_tn.simu(output)
-    qiskit_simulate(folder, circuit_file, error_num = 0, error_position=[]) # Verify the result with qiskit
-    # Noise Simulation (Accurate), noise config in config.py
-    test_tn = QCTN(circuit_file, folder)
-    test_tn.io_test(output, error_num=NOISE_NUM, random_pos=False)
-    qiskit_simulate(
-        folder, circuit_file, error_num=NOISE_NUM, error_position=NOISE_POS
-    )  # Verify the result with qiskit
-    # Noise Simulation (Approximate), noise config in config.py, enum is the level of enumutate
-    test_tn = QCTN(circuit_file, folder)
-    test_tn.enumurate_io(output, error_num = NOISE_NUM, random_pos = False, enum = 1)
-    # Full vector simulation
-    test_tn = QCTN(circuit_file, folder)
+    # qiskit_simulate(folder, circuit_file, error_num = 0, error_position=[]) # Verify the result with qiskit
+    # # Noise Simulation (Accurate), noise config in config.py
+    # test_tn = QCTN(circuit_file, folder)
+    # test_tn.io_test(output, error_num=NOISE_NUM, random_pos=False)
+    # qiskit_simulate(
+    #     folder, circuit_file, error_num=NOISE_NUM, error_position=NOISE_POS
+    # )  # Verify the result with qiskit
+    # # Noise Simulation (Approximate), noise config in config.py, enum is the level of enumutate
+    # test_tn = QCTN(circuit_file, folder)
+    # test_tn.enumurate_io(output, error_num = NOISE_NUM, random_pos = False, enum = 1)
+    # # Full vector simulation
+    # test_tn = QCTN(circuit_file, folder)
     test_tn.simu_vec(output)
-    # Full density matrix simulation
-    test_tn = QCTN(circuit_file, folder)
-    test_tn.simu_dm(output, error_num=0, random_pos=False)
+    # # Full density matrix simulation
+    # test_tn = QCTN(circuit_file, folder)
+    # test_tn.simu_dm(output, error_num=0, random_pos=False)
 
